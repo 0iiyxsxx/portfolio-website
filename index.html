@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DXIO — Developer & Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a class="nav-logo" href="#">DX<span>IO</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- Floating particle canvas -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+    <!-- Background blobs -->
+    <div class="blob-field" aria-hidden="true">
+      <svg class="blob blob-1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path id="blob1Path" fill="#A78BFA" opacity="0.35"/>
+      </svg>
+      <svg class="blob blob-2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path id="blob2Path" fill="#FF6B6B" opacity="0.25"/>
+      </svg>
+      <svg class="blob blob-3" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path id="blob3Path" fill="#FFB347" opacity="0.22"/>
+      </svg>
+      <svg class="blob blob-4" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <path id="blob4Path" fill="#6EE7B7" opacity="0.2"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow">hey, I'm</span>
+        <h1 class="hero-name">DXIO</h1>
+        <p class="hero-sub">I build things for the web — clean, creative, <em>a little unexpected</em>.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">See my work</a>
+          <a href="#about" class="btn-ghost">About me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- Profile image placeholder with morphing ring -->
+        <div class="profile-frame">
+          <svg class="profile-ring" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#A78BFA"/>
+                <stop offset="50%" stop-color="#FF6B6B"/>
+                <stop offset="100%" stop-color="#FFB347"/>
+              </linearGradient>
+            </defs>
+            <path id="ringPath" fill="none" stroke="url(#ringGrad)" stroke-width="3"/>
+          </svg>
+          <div class="profile-img-wrap">
+            <!-- Drop your photo here — or leave as initials -->
+            <div class="profile-initials" aria-label="Profile photo of DXIO">DX</div>
+          </div>
+
+          <!-- Orbiting dots -->
+          <span class="orbit-dot dot-a"></span>
+          <span class="orbit-dot dot-b"></span>
+          <span class="orbit-dot dot-c"></span>
+        </div>
+
+        <!-- Floating skill chips around visual -->
+        <span class="float-chip chip-html">HTML</span>
+        <span class="float-chip chip-css">CSS</span>
+        <span class="float-chip chip-js">JS</span>
+        <span class="float-chip chip-py">PY</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="12" height="20" rx="6" stroke="currentColor" stroke-width="1.5"/>
+        <circle class="scroll-dot" cx="7" cy="7" r="2.5" fill="currentColor"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about-section" id="about">
+    <div class="section-inner">
+      <div class="section-label">/ about</div>
+      <div class="about-grid">
+        <h2 class="about-headline">Crafting digital <span class="accent-text">experiences</span> that feel right.</h2>
+        <div class="about-body">
+          <p>I'm a developer who cares as much about <em>how</em> something feels as how it works. I blend clean code with considered design — building projects that are fast, functional, and quietly beautiful.</p>
+          <p>When I'm not shipping features, I'm exploring creative tech, tinkering with generative visuals, and obsessing over small details nobody asked for but everyone notices.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">3+</span>
+              <span class="stat-label">Years building</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">∞</span>
+              <span class="stat-label">Curiosity level</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">01</span>
+              <span class="stat-label">Focus: quality</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative stripe -->
+    <div class="stripe-deco" aria-hidden="true"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills-section" id="skills">
+    <div class="section-inner">
+      <div class="section-label">/ skills</div>
+      <h2 class="section-title">What I work with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card" data-color="#A78BFA">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 5l3 28 12 4 12-4 3-28H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M14 14h12M13 20h14l-1.5 8L20 30l-5.5-2L13 20z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>HTML</h3>
+          <p>Semantic, accessible structure — the bones that hold everything together.</p>
+        </div>
+
+        <div class="skill-card" data-color="#FF6B6B">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 5l3 28 12 4 12-4 3-28H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M25 14H15l0.5 5H24l-0.5 7L20 27l-3.5-1L16 23" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>CSS</h3>
+          <p>Layouts, animations, and visual polish that make interfaces feel alive.</p>
+        </div>
+
+        <div class="skill-card" data-color="#FFB347">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 28l-5-5 5-5M30 28l5-5-5-5M22 10l-4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>JavaScript</h3>
+          <p>Interaction, logic, and bringing ideas to life on the client side.</p>
+        </div>
+
+        <div class="skill-card" data-color="#6EE7B7">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 8c6.627 0 12 5.373 12 12s-5.373 12-12 12S8 26.627 8 20 13.373 8 20 8z" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 14v8l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Python</h3>
+          <p>Scripting, automation, and building the backend logic that powers things.</p>
+        </div>
+
+        <div class="skill-card" data-color="#60A5FA">
+          <div class="skill-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="14" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="10" cy="29" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="30" cy="29" r="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 18v4M16 31h-2M24 31h2M16 27l-4 2M24 27l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Git</h3>
+          <p>Version control, collaboration, and keeping code history clean.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section projects-section" id="projects">
+    <div class="section-inner">
+      <div class="section-label">/ projects</div>
+      <h2 class="section-title">Things I've built</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card project-card--large" data-tilt>
+          <div class="project-glow" style="--glow:#A78BFA"></div>
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Python</span><span>Computer Vision</span><span>MediaPipe</span>
+            </div>
+            <h3 class="project-title">Hand Tracker</h3>
+            <p class="project-desc">Real-time hand detection and gesture recognition using computer vision. Tracks landmark positions to enable touchless interaction.</p>
+            <div class="project-link-row">
+              <a href="#" class="project-link" aria-label="View Hand Tracker project">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-deco project-deco-hand" aria-hidden="true">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- stylized hand shape -->
+              <circle cx="60" cy="60" r="50" stroke="#A78BFA" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+              <circle cx="60" cy="60" r="6" fill="#A78BFA" opacity="0.5"/>
+              <line x1="60" y1="54" x2="60" y2="20" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="60" y1="54" x2="82" y2="22" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="60" y1="54" x2="98" y2="40" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="60" y1="54" x2="38" y2="22" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="60" y1="54" x2="60" y2="80" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="60" cy="20" r="4" fill="#A78BFA" opacity="0.6"/>
+              <circle cx="82" cy="22" r="4" fill="#A78BFA" opacity="0.6"/>
+              <circle cx="98" cy="40" r="4" fill="#A78BFA" opacity="0.6"/>
+              <circle cx="38" cy="22" r="4" fill="#A78BFA" opacity="0.6"/>
+              <circle cx="60" cy="80" r="4" fill="#A78BFA" opacity="0.6"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="project-card" data-tilt>
+          <div class="project-glow" style="--glow:#FF6B6B"></div>
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3 class="project-title">Cat Frontend</h3>
+            <p class="project-desc">A charming, fully responsive website dedicated to our feline friends — playful UI, smooth animations, and a lot of personality.</p>
+            <div class="project-link-row">
+              <a href="#" class="project-link" aria-label="View Cat Frontend project">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-deco project-deco-cat" aria-hidden="true">
+            <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- stylized cat silhouette -->
+              <path d="M35 80 Q35 50 50 45 Q45 30 35 15 Q50 20 55 35 Q58 32 62 32 Q66 32 65 35 Q80 20 85 15 Q75 30 70 45 Q85 50 85 80 Z" stroke="#FF6B6B" stroke-width="1.5" fill="none" opacity="0.5"/>
+              <ellipse cx="52" cy="58" rx="4" ry="5" fill="#FF6B6B" opacity="0.4"/>
+              <ellipse cx="68" cy="58" rx="4" ry="5" fill="#FF6B6B" opacity="0.4"/>
+              <path d="M55 65 Q60 68 65 65" stroke="#FF6B6B" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="project-card" data-tilt>
+          <div class="project-glow" style="--glow:#FFB347"></div>
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span>Game Dev</span><span>Design</span><span>Lore</span>
+            </div>
+            <h3 class="project-title">Ashen Blade</h3>
+            <p class="project-desc">A dark fantasy game concept with custom visual identity, world-building, and a hand-crafted UI system for the interface.</p>
+            <div class="project-link-row">
+              <a href="#" class="project-link" aria-label="View Ashen Blade project">
+                View project
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-deco project-deco-sword" aria-hidden="true">
+            <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="40" y1="10" x2="40" y2="90" stroke="#FFB347" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              <line x1="25" y1="70" x2="55" y2="70" stroke="#FFB347" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+              <path d="M37 90 Q40 105 43 90" stroke="#FFB347" stroke-width="2" fill="none" opacity="0.5"/>
+              <circle cx="40" cy="70" r="3" fill="#FFB347" opacity="0.5"/>
+              <path d="M40 10 L36 30 L40 28 L44 30 Z" fill="#FFB347" opacity="0.3"/>
+            </svg>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-sig">
+        <span class="footer-logo">DX<span>IO</span></span>
+        <span class="footer-line">Built with care & curiosity.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#" aria-label="GitHub">GH</a>
+        <a href="#" aria-label="Twitter">TW</a>
+        <a href="#" aria-label="Email">ML</a>
+      </div>
+      <p class="footer-copy">© 2025 DXIO</p>
+    </div>
+    <div class="footer-gradient" aria-hidden="true"></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
